@@ -18,9 +18,9 @@ namespace DesafioTecnico.Repository
             return await _context.Residents.Select(x => x).ToListAsync();
         }
 
-        public Task<Resident> GetById(int id)
+        public async Task<Resident> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Residents.Where(o => o.Id == id).FirstOrDefaultAsync();
         }
     }
 }

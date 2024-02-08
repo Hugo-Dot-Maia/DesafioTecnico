@@ -22,12 +22,16 @@ namespace DesafioTecnico.Repository
         {
             _context.Remove(entity);
             return true;
-        }
+        }     
 
         public bool Update<T>(T entity) where T : class
         {
             _context.Update(entity);
             return true;
+        }
+        public async Task<bool> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }
