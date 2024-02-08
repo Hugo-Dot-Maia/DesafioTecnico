@@ -1,4 +1,9 @@
 using DesafioTecnico.Context;
+using DesafioTecnico.Model.Entities;
+using DesafioTecnico.Repository;
+using DesafioTecnico.Repository.Interfaces;
+using DesafioTecnico.Service;
+using DesafioTecnico.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,8 +12,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// Connect Database
 builder.Services.AddDbContext<DesafioTecnicoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("App")));
+//Mapper
+builder.Services.AddAutoMapper(typeof(Resident),typeof(Apartment),typeof(Condominium),typeof(Block));
+// Dependency Injection
+builder.Services.AddScoped<IBaseRepository,BaseRepository>();
+builder.Services.AddScoped<IResidentRepository,ResidentRepository>();
+builder.Services.AddScoped<IResidentService,ResidentService>();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

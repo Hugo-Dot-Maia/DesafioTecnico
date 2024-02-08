@@ -1,6 +1,7 @@
-﻿namespace DesafioTecnico.Model.Entities
+﻿
+namespace DesafioTecnico.Model.Dto
 {
-    public class Resident
+    public class ResidentDto
     {
         public int Id { get; set; }
         public string FullName { get; set; }
