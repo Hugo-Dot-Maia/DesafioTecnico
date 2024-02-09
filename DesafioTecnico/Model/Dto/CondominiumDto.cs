@@ -1,6 +1,6 @@
-﻿namespace DesafioTecnico.Model.Entities
+﻿namespace DesafioTecnico.Model.Dto
 {
-    public class Condominium
+    public class CondominiumDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -16,6 +16,9 @@ namespace DesafioTecnico.Profiles
 
             CreateMap<Block, BlockDto>();
             CreateMap<BlockDto, Block>();
+
+            CreateMap<Condominium, CondominiumDto>();
+            CreateMap<CondominiumDto, Condominium>();
         }
     }
 }
