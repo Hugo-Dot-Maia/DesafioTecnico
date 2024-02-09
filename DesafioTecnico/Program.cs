@@ -22,9 +22,11 @@ builder.Services.AddScoped<IBaseRepository,BaseRepository>();
 
 builder.Services.AddScoped<IResidentRepository,ResidentRepository>();
 builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
+builder.Services.AddScoped<IBlockRepository,BlockRepository>();
 
 builder.Services.AddScoped<IResidentService,ResidentService>();
 builder.Services.AddScoped<IApartmentService,ApartmentService>();
+builder.Services.AddScoped<IBlockService,BlockService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

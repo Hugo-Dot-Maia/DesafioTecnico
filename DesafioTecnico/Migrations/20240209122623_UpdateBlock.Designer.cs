@@ -4,6 +4,7 @@ using DesafioTecnico.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesafioTecnico.Migrations
 {
     [DbContext(typeof(DesafioTecnicoContext))]
-    partial class DesafioTecnicoContextModelSnapshot : ModelSnapshot
+    [Migration("20240209122623_UpdateBlock")]
+    partial class UpdateBlock
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

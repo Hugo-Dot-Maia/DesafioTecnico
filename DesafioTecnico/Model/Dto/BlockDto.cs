@@ -1,6 +1,8 @@
-﻿namespace DesafioTecnico.Model.Entities
+﻿using DesafioTecnico.Model.Entities;
+
+namespace DesafioTecnico.Model.Dto
 {
-    public class Block
+    public class BlockDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

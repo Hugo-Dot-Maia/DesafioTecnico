@@ -12,7 +12,10 @@ namespace DesafioTecnico.Profiles
             CreateMap<ResidentDto, Resident>();
 
             CreateMap<Apartment, ApartmentDto>();
-            CreateMap<ApartmentDto, Apartment>();  
+            CreateMap<ApartmentDto, Apartment>();
+
+            CreateMap<Block, BlockDto>();
+            CreateMap<BlockDto, Block>();
         }
     }
 }

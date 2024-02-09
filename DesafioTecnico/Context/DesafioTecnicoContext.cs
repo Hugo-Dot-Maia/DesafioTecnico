@@ -18,9 +18,7 @@ namespace DesafioTecnico.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Condominium>()
-                .HasMany(c => c.Blocks)
-                .WithOne(b => b.Condominium)
-                .HasForeignKey(b => b.CondominiumId);
+                .HasMany(c => c.Blocks);
 
             modelBuilder.Entity<Block>()
                 .HasMany(b => b.Apartments);

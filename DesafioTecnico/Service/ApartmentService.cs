@@ -16,15 +16,15 @@ namespace DesafioTecnico.Service
             _mapper = mapper;
         }
 
-        public async Task<ApartmentDto> Add(ApartmentDto resident)
+        public async Task<ApartmentDto> Add(ApartmentDto apartment)
         {
-            var newApartment = _mapper.Map<Apartment>(resident);
+            var newApartment = _mapper.Map<Apartment>(apartment);
 
             var result = _repository.Create(newApartment);
             await _repository.SaveChangesAsync();
 
             return result is not null
-                ? resident
+                ? apartment
                 : new ApartmentDto();
         }
 
@@ -60,14 +60,14 @@ namespace DesafioTecnico.Service
             return _mapper.Map<ApartmentDto>(result);
         }
 
-        public async Task<bool> Update(int id, ApartmentDto resident)
+        public async Task<bool> Update(int id, ApartmentDto apartment)
         {
             var dbApartment = await _repository.GetById(id);
 
             if (dbApartment == null)
                 return false;
 
-            var updatedApartment = _mapper.Map(resident, dbApartment);
+            var updatedApartment = _mapper.Map(apartment, dbApartment);
 
             _repository.Update(updatedApartment);
 
