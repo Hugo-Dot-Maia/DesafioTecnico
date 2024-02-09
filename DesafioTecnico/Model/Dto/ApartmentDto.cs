@@ -1,11 +1,12 @@
-﻿namespace DesafioTecnico.Model.Entities
+﻿using DesafioTecnico.Model.Entities;
+
+namespace DesafioTecnico.Model.Dto
 {
-    public class Apartment
+    public class ApartmentDto
     {
         public int Id { get; set; }
         public int Number { get; set; }
         public int Floor { get; set; }
         public int BlockId { get; set; }
-        public List<Resident> Residents { get; set; }
     }
 }

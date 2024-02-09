@@ -23,9 +23,7 @@ namespace DesafioTecnico.Context
                 .HasForeignKey(b => b.CondominiumId);
 
             modelBuilder.Entity<Block>()
-                .HasMany(b => b.Apartments)
-                .WithOne(a => a.Block)
-                .HasForeignKey(a => a.BlockId);
+                .HasMany(b => b.Apartments);
 
             modelBuilder.Entity<Apartment>()
                 .HasMany(a => a.Residents);      

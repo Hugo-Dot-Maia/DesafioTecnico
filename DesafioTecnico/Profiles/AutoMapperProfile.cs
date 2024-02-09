@@ -10,6 +10,9 @@ namespace DesafioTecnico.Profiles
         {
             CreateMap<Resident, ResidentDto>();
             CreateMap<ResidentDto, Resident>();
+
+            CreateMap<Apartment, ApartmentDto>();
+            CreateMap<ApartmentDto, Apartment>();  
         }
     }
 }

@@ -19,8 +19,12 @@ builder.Services.AddDbContext<DesafioTecnicoContext>(options =>
 builder.Services.AddAutoMapper(typeof(Resident),typeof(Apartment),typeof(Condominium),typeof(Block));
 // Dependency Injection
 builder.Services.AddScoped<IBaseRepository,BaseRepository>();
+
 builder.Services.AddScoped<IResidentRepository,ResidentRepository>();
+builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
+
 builder.Services.AddScoped<IResidentService,ResidentService>();
+builder.Services.AddScoped<IApartmentService,ApartmentService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
