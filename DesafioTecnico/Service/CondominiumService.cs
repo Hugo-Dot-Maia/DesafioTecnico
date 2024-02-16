@@ -19,9 +19,9 @@ namespace DesafioTecnico.Service
 
         public async Task<CondominiumDto> Add(CondominiumDto condominium)
         {
-            var newBlock = _mapper.Map<CondominiumDto>(condominium);
+            var newCondominium = _mapper.Map<Condominium>(condominium);
 
-            var result = _repository.Create(newBlock);
+            var result = _repository.Create(newCondominium);
             await _repository.SaveChangesAsync();
 
             return result is not null
