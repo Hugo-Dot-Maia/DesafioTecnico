@@ -2,12 +2,7 @@
 
 namespace DesafioTecnico.Service.Interfaces
 {
-    public interface ICondominiumService
+    public interface ICondominiumService : IBaseService<CondominiumDto>
     {
-        Task<CondominiumDto> GetById(int id);
-        Task<IEnumerable<CondominiumDto>> GetAll();
-        Task<bool> Update(int id, CondominiumDto condominium);
-        Task<bool> Delete(int id);
-        Task<CondominiumDto> Add(CondominiumDto condominium);
     }
 }

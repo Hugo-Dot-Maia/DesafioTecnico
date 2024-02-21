@@ -2,12 +2,7 @@
 
 namespace DesafioTecnico.Service.Interfaces
 {
-    public interface IResidentService
+    public interface IResidentService : IBaseService<ResidentDto>
     {
-        Task<ResidentDto> GetById(int id);
-        Task<IEnumerable<ResidentDto>> GetAll();
-        Task<bool> Update(int id, ResidentDto resident);
-        Task<bool> Delete(int id);
-        Task<ResidentDto> Add(ResidentDto resident);
     }
 }

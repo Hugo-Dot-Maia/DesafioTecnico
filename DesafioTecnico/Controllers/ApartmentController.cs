@@ -1,5 +1,4 @@
 ﻿using DesafioTecnico.Model.Dto;
-using DesafioTecnico.Service;
 using DesafioTecnico.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +33,7 @@ namespace DesafioTecnico.Controllers
             return new OkObjectResult(result);
         }
 
+        //Retornar o ID do novo obj
         [HttpPost]
         public async Task<IActionResult> Post(ApartmentDto apartment)
         {
@@ -48,6 +48,7 @@ namespace DesafioTecnico.Controllers
 
         }
 
+        //TODO inserir o id no DTO
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, ApartmentDto resident)
         {

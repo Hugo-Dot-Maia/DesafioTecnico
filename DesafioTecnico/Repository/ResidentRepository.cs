@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DesafioTecnico.Repository
 {
-    public class ResidentRepository : BaseRepository, IResidentRepository
+    public class ResidentRepository : BaseRepository<Resident>, IResidentRepository
     {
         private readonly DesafioTecnicoContext _context;
         public ResidentRepository(DesafioTecnicoContext context) : base(context)

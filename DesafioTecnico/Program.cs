@@ -18,17 +18,16 @@ builder.Services.AddDbContext<DesafioTecnicoContext>(options =>
 //Mapper
 builder.Services.AddAutoMapper(typeof(Resident),typeof(Apartment),typeof(Condominium),typeof(Block));
 // Dependency Injection
-builder.Services.AddScoped<IBaseRepository,BaseRepository>();
 
-builder.Services.AddScoped<IResidentRepository,ResidentRepository>();
-builder.Services.AddScoped<IApartmentRepository,ApartmentRepository>();
-builder.Services.AddScoped<IBlockRepository,BlockRepository>();
-builder.Services.AddScoped<ICondominiumRepository,CondominiumRepository>();
+builder.Services.AddTransient<IResidentRepository,ResidentRepository>();
+builder.Services.AddTransient<IApartmentRepository,ApartmentRepository>();
+builder.Services.AddTransient<IBlockRepository,BlockRepository>();
+builder.Services.AddTransient<ICondominiumRepository,CondominiumRepository>();
 
-builder.Services.AddScoped<IResidentService,ResidentService>();
-builder.Services.AddScoped<IApartmentService,ApartmentService>();
-builder.Services.AddScoped<IBlockService,BlockService>();
-builder.Services.AddScoped<ICondominiumService,CondominiumService>();
+builder.Services.AddTransient<IResidentService,ResidentService>();
+builder.Services.AddTransient<IApartmentService,ApartmentService>();
+builder.Services.AddTransient<IBlockService,BlockService>();
+builder.Services.AddTransient<ICondominiumService,CondominiumService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

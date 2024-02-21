@@ -17,6 +17,11 @@ namespace DesafioTecnico.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
+                e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
+                property.SetColumnType("varchar(100)");
+
+
             modelBuilder.Entity<Condominium>();
 
             modelBuilder.Entity<Block>()

@@ -2,13 +2,8 @@
 
 namespace DesafioTecnico.Service.Interfaces
 {
-    public interface IApartmentService
+    public interface IApartmentService : IBaseService<ApartmentDto>
     {
-        Task<ApartmentDto> GetById(int id);
-        Task<IEnumerable<ApartmentDto>> GetAll();
-        Task<bool> Update(int id, ApartmentDto apartment);
-        Task<bool> Delete(int id);
-        Task<ApartmentDto> Add(ApartmentDto apartment);
 
     }
 }

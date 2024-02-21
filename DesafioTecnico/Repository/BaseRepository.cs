@@ -3,7 +3,7 @@ using DesafioTecnico.Repository.Interfaces;
 
 namespace DesafioTecnico.Repository
 {
-    public class BaseRepository : IBaseRepository
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T: class
     {
         private readonly DesafioTecnicoContext _context;
 
@@ -12,19 +12,19 @@ namespace DesafioTecnico.Repository
             _context = context;
         }
 
-        public T Create<T>(T entity) where T : class
+        public T Create(T entity)
         {
             _context.Add(entity);
             return entity;
         }
 
-        public bool Delete<T>(T entity) where T : class
+        public bool Delete(T entity)
         {
             _context.Remove(entity);
             return true;
         }     
 
-        public bool Update<T>(T entity) where T : class
+        public bool Update(T entity)
         {
             _context.Update(entity);
             return true;

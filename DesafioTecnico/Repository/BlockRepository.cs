@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DesafioTecnico.Repository
 {
-    public class BlockRepository : BaseRepository, IBlockRepository
+    public class BlockRepository : BaseRepository<Block>, IBlockRepository
     {
         private readonly DesafioTecnicoContext _context;
         public BlockRepository(DesafioTecnicoContext context) : base(context)
